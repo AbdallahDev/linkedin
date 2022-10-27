@@ -31,10 +31,21 @@ login_btn.click()
 corp_links = driver.find_elements(By.CSS_SELECTOR,
                                   "a.disabled.ember-view.job-card-container__link.job-card-list__title")
 
-for index in range(5):
+for index in range(2):
     time.sleep(0.5)
     corp_links[index].click()
     time.sleep(0.5)
     save_btn = driver.find_element(By.CSS_SELECTOR,
                                    'button.jobs-save-button.artdeco-button.artdeco-button--3.artdeco-button--secondary')
     save_btn.click()
+
+menu = driver.find_elements(By.CSS_SELECTOR, "a.app-aware-link.global-nav__primary-link")
+jobs_btn = menu[2]
+jobs_btn.click()
+
+time.sleep(2)
+
+side_bar = driver.find_elements(By.CSS_SELECTOR,
+                                'a.app-aware-link.link-without-hover-state.display-flex.align-items-center')
+
+print(side_bar[0].click())
